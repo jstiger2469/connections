@@ -21,11 +21,21 @@ const SecondHero = () => {
     }
   }, [formCreated]);
 
+  interface FormData {
+    firstname: string;
+    lastname: string
+    email: string;
+    phone: string;
+    message: string;
+    acuerdoOptIn: boolean;
+  }
+
   const [formData, setFormData] = useState({
-    name: '',
+    firstname: '',
+    lastname: '',
     email: '',
     message: '',
-    typeOfAccident: 'Auto Accident',
+    phone: '',
     acuerdoOptIn: false,
   });
 
