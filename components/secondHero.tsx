@@ -33,7 +33,7 @@ const SecondHero = () => {
     e.preventDefault();
     // Access form data from the event
     const formData = new FormData(e.currentTarget);
-    const data = {};
+    const data: { [key: string]: any } = {};
     formData.forEach((value, key) => {
       data[key] = value;
     });
