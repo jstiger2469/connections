@@ -182,8 +182,6 @@ const SecondHero = () => {
                 id="message"
                 name="message"
                 placeholder='Mensaje'
-
-                rows="4"
                 className="border border-gray-300 shadow p-2 w-full rounded mb-"
 
                 value={formData.message}
