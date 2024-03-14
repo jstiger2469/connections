@@ -1,5 +1,5 @@
 "use client";
-import React, { FormEvent } from 'react';
+import React, { FormEvent, ChangeEvent } from 'react';
 
 import { useHubspotForm } from 'next-hubspot';
 import { useState, useEffect } from 'react';
@@ -67,7 +67,7 @@ const SecondHero = () => {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === 'checkbox' ? checked : value;
 
