@@ -1,4 +1,5 @@
 "use client";
+import React, { FormEvent } from 'react';
 
 import { useHubspotForm } from 'next-hubspot';
 import { useState, useEffect } from 'react';
@@ -28,10 +29,10 @@ const SecondHero = () => {
     acuerdoOptIn: false,
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Access form data from the event
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.currentTarget);
     const data = {};
     formData.forEach((value, key) => {
       data[key] = value;
