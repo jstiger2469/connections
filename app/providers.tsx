@@ -7,10 +7,11 @@ interface ProvidersProps {
   children: ReactNode;
 }
 
-const Providers = ({ children }) => (
+
+const Providers: React.FC<ProvidersProps> = ({ children }: ProvidersProps) => (
   <HubspotProvider>
     {children}
   </HubspotProvider>
-)
+);
 
 export default Providers
