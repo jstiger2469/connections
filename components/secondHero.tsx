@@ -78,9 +78,13 @@ const SecondHero = () => {
   };
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (e) => {
-    const { name, value, type, checked } = e.target;
-    const newValue = type === 'checkbox' ? checked : value;
-
+    const { name, value, type} = e.target;
+    let newValue: string | boolean;
+    if (type === 'checkbox') {
+      newValue = (e.target as HTMLInputElement).checked;
+    } else {
+      newValue = value;
+    }
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: newValue,
